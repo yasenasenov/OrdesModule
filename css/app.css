@@ -1,0 +1,254 @@
+@font-face {
+    font-family: Stylo;
+    src: url(../fonts/stylo_.ttf);
+}
+@font-face {
+    font-family: NK_Mono;
+    src: url(../fonts/NK_Mono.ttf);
+}
+/*desktop*/
+@media screen and (min-width: 1000px)
+{
+    body{
+        font-family: 'Candal', cursive;
+    }
+    .menuDivs{
+        height: 200px;
+    }
+    a{
+        font-size: 1.7em;
+    }
+    #main{
+        padding-top: 150px;
+    }
+    #orderDesktop{
+        display: block;
+    }
+    .item{
+        padding: 10px 30px 0 30px;
+    }
+
+}
+/*mobile*/
+@media screen and (max-width: 1000px)
+{
+    body{
+        font-family: 'Calibri';
+    }
+    .menuDivs{
+        height: 120px;
+    }
+    a{
+        font-size: 1.7em;
+    }
+    #main{
+        padding-top: 140px;
+    }
+    #orderDesktop{
+        display: none;
+    }
+    .item{
+        padding: 5px;
+    }
+
+}
+body{
+    /*background-color: #EFF0F2;*/
+}
+.menuSpan{
+    background-color: #C12E2A;
+    padding: 3px;
+    border-radius: 10px;
+}
+.menuDivs{
+    background-size: 100%;
+    border: 3px solid #ffffff;
+}
+.container{
+    text-align: center;
+}
+#title{
+    height: 35px;
+}
+#white{
+    width: 100%;
+    background-color: #ffffff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 3;
+}
+#logo{
+    font-weight: bolder;
+    font-size: 2em;
+    color: #666666;
+    font-family: NK_Mono;
+}
+#btnsLessPadding{
+   padding: 5px;
+}
+a{
+    padding: 5px 0;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    height: 100%;
+}
+a:hover{
+    text-decoration: none;
+    color: darkred;
+}
+ul{
+    list-style: none;
+    padding: 10px;
+}
+
+#panel{
+    background-color: #DADADC;
+    border-radius: 10px;
+}
+#menuPanel {
+    border-radius: 10px;
+
+}
+#ok{
+    margin: 5px 0;
+}
+
+#title{
+    text-align: left;
+    padding-left: 15px;
+    width: 100%;
+    color: #ffffff;
+    font-size: 2.2em;
+    background: #1ABABC;
+    border-radius: 5px;
+}
+.item{
+    font-size: 1.3em;
+    font-weight: bolder;
+    text-align: left;
+    background-color: #DADADC;
+    border-radius: 4px;
+    margin-top: 10px;
+    overflow: auto;
+}
+.itemsInCart{
+    font-size: 2em;
+}
+#hiddenMenu{
+    display: none;
+    float: left;
+    margin: 5px 0;
+}
+#table{
+    width: 100%;
+}
+#cartBtn{
+    color: #666666;
+}
+
+.orderImg{
+    width: 50px;
+    opacity: 0.8;
+}
+.orderImg:hover{
+    cursor: pointer;
+    opacity: 1;
+
+}
+.price,.del{
+    float: right;
+}
+.price{
+    width: 100%;
+    padding: 5px;
+    text-align: left;
+}
+.opis{
+    background-color: #5BC0DE;
+    font-weight: bold;
+    color: #666666;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    font-size: 0.8em;
+
+}
+.title{
+    /*width: 175px;*/
+}
+
+#total,#sum{
+    font-size: 1em;
+}
+.toLeft{
+    float: left;
+}
+.toRight{
+    float: right;
+}
+.badge{
+    margin-left: 5px;
+}
+.input-group{
+    font-size: 1.5em;
+}
+.myBadge{
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
+    color: #ffffff;
+    background-color: #c0c0c0;
+    font-size: 0.8em;
+
+}
+.cartTitle{
+    font-size: 0.7em;
+}
+
+.col-lg-12{
+    padding: 0;
+}
+.panel{
+    text-align: left;
+}
+
+#finalOrderBtnDiv{
+    height: 70px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.finalOrderBtn{
+    font-size: 1.7em;
+    width: 200px;
+    padding: 10px;
+}
+.supp{
+    color: #666666;
+}
+.supp:hover{
+    cursor: pointer;
+    background-color: #1ABABC;
+}
+.form-control{
+    z-index: -1;
+}
+#notConfirmed{
+    color: red;
+    font-size: 1.3em;
+}
+.image{
+    width: 170px;
+    border-radius: 10px;
+    margin: 5px;
+}
+#buttonsHolder{
+    background-color: #4DA54D;
+}
+#btnsHolder{
+    width: 40%;
+}
+#orderMobile .list-group-item{
+    font-size: 1em;
+    font-weight: bold;
+}

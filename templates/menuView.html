@@ -1,0 +1,16 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{openedTitle}}</h3>
+    </div>
+    <div class="panel-body">
+        <div id="menuPanel" ng-repeat="folder in folders.titles">
+            <a href="" ng-click="loadMenu(folder.title)">
+                <div class="menuDivs col-sm-3" style="background-image:url('http://pizza-sanmarco.com/iorder.me/objects/main/images/{{folder.bg}}')">
+                    <label class="label label-default">{{folder.title}}</label>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+

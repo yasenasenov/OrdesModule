@@ -1,0 +1,166 @@
+<div class="container" id="orderDesktop" style="font-size: 1.3em">
+    <div class="panel panel-default col-lg-4">
+        <div class="panel-heading">Поръчка:</div>
+        <div class="panel-body">
+            <div>
+                Обща сума: <span class="label label-info">{{total}}лв.</span>
+            </div>
+            <div>
+                Цена на доставка: {{delivery}}лв.
+            </div>
+            <div class="" ng-repeat="item in arrInCart">
+                <div>{{item.name}}<span class="badge" ng-bind="item.count"></span></div>
+            </div>
+            <a ng-href="#/cart" class="btn btn-danger orderBtns" style="margin-top: 20px">
+                <span class="glyphicon glyphicon-pencil"></span>&nbsp;Редактирай
+            </a>
+        </div>
+        <div class="panel-heading">Уточнения:</div>
+        <div class="panel-body">
+            <ul id="list">
+                <li ng-repeat="cl in clars">
+                    <span class='label label-warning' >{{cl.name}} : {{cl.txtValue}}</span>
+                </li>
+            </ul>
+            <a ng-href="#/cart" class="btn btn-danger orderBtns" >
+                <span class="glyphicon glyphicon-plus"></span> &nbsp;Добави уточнение към артикул
+            </a>
+        </div>
+    </div>
+    <div class="panel panel-default col-lg-4">
+        <div class="panel-body" style="text-align: center">
+            <a ng-href="#/confirm" class="btn btn-success finalOrderBtn" ng-click="sendOrder()">
+                <span class="glyphicon glyphicon-share-alt"></span>&nbsp;Поръчай
+            </a>
+            <a href="http://iorder.me" class="btn btn-danger finalOrderBtn">
+                <span class="glyphicon glyphicon-remove"></span>&nbsp;Отказ
+            </a>
+        </div>
+    </div>
+    <div class="panel panel-default col-lg-4">
+        <div class="panel-heading">Адрес и телефон:</div>
+            <div class="panel-body">
+                <div id="toHideFromEdit">
+                    <div>{{address}}</div>
+                    <div>{{phone}}</div>
+                </div>
+                <br>
+                <button class="btn btn-danger orderBtns" id="editAddressBtn" style="margin-top: 10px" ng-click="toggleEdit()">
+                    <span class="glyphicon glyphicon-pencil"></span>&nbsp;Редактирай
+                </button>
+                <div id="edit" style="display: none">
+                    <div class="input-group">
+                        <input type="text" id="addressTxtField" class="form-control" placeholder="адрес..." ng-model="address">
+                    <span class="input-group-btn">
+                        <button class="btn btn-success" type="button" ng-click="editAddress(address)">Ок</button>
+                    </span>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="phoneTxtField" class="form-control" placeholder="телефон..." ng-model="phone">
+                    <span class="input-group-btn">
+                        <button class="btn btn-success" type="button" ng-click="editPhone(phone)">Ок</button>
+                    </span>
+                    </div>
+                </div>
+
+            </div>
+        <div class="panel-heading">Бележки и специални искания</div>
+        <div class="panel-body" ng-init="info=''">
+
+            <textarea cols="20" rows="4" ng-model="info"></textarea><br>
+
+            <button ng-click="setInfo(info)" class="btn btn-danger orderBtns" >
+                <span class="glyphicon glyphicon-floppy-disk"></span> &nbsp;Ok
+            </button>
+        </div>
+    </div>
+
+</div>
+
+
+<div id="orderMobile">
+
+    <div class="panel panel-default">
+        <div class="panel-body" style="text-align: center">
+            <a ng-href="#/confirm" class="btn btn-success" ng-click="sendOrder()">
+                <span class="glyphicon glyphicon-share-alt"></span>&nbsp;Поръчай
+            </a>
+            <a href="http://iorder.me" class="btn btn-danger">
+                <span class="glyphicon glyphicon-remove"></span>&nbsp;Отказ
+            </a>
+        </div>
+    </div>
+
+    <div class="list-group">
+        <a ng-click="showDiv(1)" class="list-group-item">Виж поръчката</a>
+        <div class="panel panel-default" id="orderView" style="display: none">
+            <div class="panel-heading">Поръчка:</div>
+            <div class="panel-body">
+                <div>
+                    Обща сума: <span class="label label-info">{{total}}лв.</span>
+                </div>
+                <div>
+                    Цена на доставка: {{delivery}}лв.
+                </div>
+                <div class="" ng-repeat="item in arrInCart">
+                    <div>{{item.name}}<span class="badge" ng-bind="item.count"></span></div>
+                </div>
+                <a ng-href="#/cart" class="btn btn-danger orderBtns" style="margin-top: 20px">
+                    <span class="glyphicon glyphicon-pencil"></span>&nbsp;Редактирай
+                </a>
+            </div>
+            <div class="panel-heading">Уточнения:</div>
+            <div class="panel-body">
+                <ul id="list">
+                    <li ng-repeat="cl in clars">
+                        <span class='label label-warning' >{{cl.name}} : {{cl.txtValue}}</span>
+                    </li>
+                </ul>
+                <a ng-href="#/cart" class="btn btn-danger orderBtns" >
+                    <span class="glyphicon glyphicon-plus"></span> &nbsp;Добави уточнение към артикул
+                </a>
+            </div>
+        </div>
+        <a ng-click="showDiv(2)" class="list-group-item">Адрес и телефон</a>
+        <div id="addressPhoneDiv" style="display: none">
+            <div class="panel-heading">Адрес и телефон:</div>
+            <div class="panel-body">
+                <div id="toHideFromEdit">
+                    <div>{{address}}</div>
+                    <div>{{phone}}</div>
+                </div>
+                <br>
+                <button class="btn btn-danger orderBtns" id="editAddressBtn" style="margin-top: 10px" ng-click="toggleEdit()">
+                    <span class="glyphicon glyphicon-pencil"></span>&nbsp;Редактирай
+                </button>
+                <div id="editMobile" style="display: none">
+                    <div class="input-group">
+                        <input type="text" id="addressTxtField" class="form-control" placeholder="адрес..." ng-model="address">
+                    <span class="input-group-btn">
+                        <button class="btn btn-success" type="button" ng-click="editAddress(address)">Ок</button>
+                    </span>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="phoneTxtField" class="form-control" placeholder="телефон..." ng-model="phone">
+                    <span class="input-group-btn">
+                        <button class="btn btn-success" type="button" ng-click="editPhone(phone)">Ок</button>
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a ng-click="showDiv(3)" class="list-group-item">Бележки и специални искания</a>
+        <div class="panel panel-default" id="addInfoDiv" style="display: none">
+            <div class="panel-heading">Допълнителна информация:</div>
+            <div class="panel-body" ng-init="info=''">
+
+                <textarea cols="20" rows="4" ng-model="info"></textarea><br>
+
+                <button ng-click="setInfo(info)" class="btn btn-danger orderBtns" >
+                    <span class="glyphicon glyphicon-floppy-disk"></span> &nbsp;Ok
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>

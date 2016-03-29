@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="panel panel-default col-lg-6">
+        <div class="panel-heading">В количката:</div>
+        <div class="panel-body">
+            <span class="cartTitle" style="font-size: 1.3em">Достaвка : 0 лв.</span>
+
+            <div class="itemsInCart" ng-repeat="item in arrInCart">
+                <span class="cartTitle">{{item.name}}</span>
+                <span class="badge" ng-bind="item.count"></span>
+                <a href="" ng-click="item.count = item.count - 1;removeItemFromCart(item.name,item.price,item.num)"
+                   ng-if="item.count>0" style="color: darkred; font-size: 0.5em">
+                    <span class="glyphicon glyphicon-trash" ></span>
+                </a>
+                <div ng-if="item.count>0">
+                    <div class="input-group">
+                        <input type="text" id="{{item.idTosend}}" class="form-control" placeholder="добави уточнение...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-success" type="button"
+                                    ng-click="addClarification(item.name,item.idTosend)">
+                                <span class="glyphicon glyphicon-ok"></span>&nbsp; запази</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default col-lg-6">
+        <div class="panel-heading">Уточнения:</div>
+        <div class="panel-body">
+            <ul id="list">
+                <li ng-repeat="cl in clars">
+                    <span class='label label-warning' >{{cl.name}} : {{cl.txtValue}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

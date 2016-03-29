@@ -1,0 +1,34 @@
+<div id="white">
+    <div class="container" id="top">
+        <div id="toHideFromConfirm">
+            <div id="toHideFromMenu">
+                <div class="panel panel-default col-lg-12">
+                    <div class="panel-heading" style="padding: 5px 15px">
+                        <span id="logo">{{logo}}</span>
+                        <a href="http://iorder.me" class="btn btn-danger toRight">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </a>
+                    </div>
+
+                    <div class="panel-body" id="btnsLessPadding">
+                        <a ng-href="#/" class="btn btn-danger toLeft" id="menuBtn">
+                            <span class="glyphicon glyphicon-arrow-left" style="padding-right: 5px"></span>Меню
+                        </a>
+                        <div class="btn-group toRight" role="group" id="cartBtn">
+                            <a ng-href="#/cart" class="btn btn-default">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                                {{badgeCount}}
+                            </a>
+                            <a ng-href="#/cart" class="btn btn-default">
+                                {{total}}лв.
+                            </a>
+                            <a ng-href="#/order" class="btn btn-success" ng-click="hideBtns()">
+                                <span class="glyphicon glyphicon glyphicon-ok"></span>&nbsp;OK
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

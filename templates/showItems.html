@@ -1,0 +1,56 @@
+<div class="panel panel-default">
+    <div class="panel-heading">{{openedTitle}}</div>
+    <div class="panel-body">
+        <div class="item" ng-repeat="item in filteredItems">
+            <div class="title toLeft">
+                <span class="badge">
+                    <span class="glyphicon glyphicon-shopping-cart"></span>
+                    <span id="{{item.num}}" >{{item.badge}}</span>
+                </span>&nbsp;
+                {{item.title}}
+                <br>
+                <img ng-src="../../objects/{{obj}}/images/items/{{item.img}}" class="image" ng-if="item.img != ''">
+            </div>
+
+            <div class="myBadge toRight">
+                <div class="btn-group-vertical" role="group">
+                    <button class="btn btn-default" ng-click="addItem(item.title,item.price,item.num)" style="font-size: 0.7em">
+                        <span class="glyphicon glyphicon-plus"></span>&nbsp;
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                    </button>
+                    <button class="btn btn-default" ng-click="removeItemFromCart(item.title,item.price,item.num)" style="font-size: 0.7em">
+                        <span class="glyphicon glyphicon-minus"></span>&nbsp;
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                    </button>
+                    <a ng-href="#/cart" class="btn btn-default" style="font-size: 0.7em">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="myBadge toRight">
+                <div class="btn-group" role="group">
+                    <div class="dropdown toLeft" ng-if="item.supp === 'yes'">
+                        <button class="btn btn-default dropdown-toggle" id="{{item.num + 'supp'}}" type="button" data-toggle="dropdown" aria-expanded="false" disabled="disabled" style="font-size: 0.9em">
+                            Добавки
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" style="width: 200px">
+                            <li class="supp" role="presentation" ng-repeat="supp in supplements.supplements" ng-if="supp !=''"
+                                ng-click="addSupplement(item.title,supp.title,supp.price,supp.num)">
+                                {{supp.title}}/<span style="font-size: 0.7em">{{supp.price}}лв.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a ng-href="#/cart" class="btn btn-default orderBtns" id="{{item.num + 'clar'}}" disabled="disabled" style="font-size: 0.9em">Уточнение</a>
+
+                </div>
+            </div>
+
+
+            <div class="price label label-warning">{{item.weight}} {{item.price}}лв.</div>
+            <div class="price opis" ng-if="item.opis">{{item.opis}}</div>
+        </div>
+
+    </div>
+</div>

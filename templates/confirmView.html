@@ -1,0 +1,30 @@
+<div class="container">
+    <a href="http://iorder.me" class="btn btn-danger" style="float: right">
+        <span class="glyphicon glyphicon-remove"></span>
+    </a>
+
+    <div class="row panel panel-danger">
+        <div class="panel-heading">Статус на поръчката :</div>
+        <div class="panel-body">
+            <div class="well">
+                <span ng-if="confirmed">
+                    Поръчката Ви е <strong>потвърдена</strong> и ще бъде доставена възможно най-скоро!<br>
+                    Благодарим Ви, че поръчахте с iorder.me!
+                </span>
+                <span ng-if="!confirmed" id="notConfirmed">
+                    <span class="glyphicon glyphicon-exclamation-sign"></span>
+                    Поръчката Ви все още не е приета от оператора! Моля, изчакайте <strong>до 5 мин.</strong> за потвърждение за приемането тук,
+                        или на предоставеният от Вас телефон.<br>
+                    <span class="glyphicon glyphicon-exclamation-sign"></span>
+                    Моля, не затваряйте настоящата страница до получаване на потвърждение!
+                </span>
+            </div>
+            <a ng-href="#/" class="btn btn-danger finalOrderBtn" style="width: 270px" ng-click="deleteOrder(localStorage['username'],total,obj)" ng-if="!confirmed" style="width: 200px">
+                <span class="glyphicon glyphicon-remove-circle" ></span>&nbsp;Откажи поръчката
+            </a>
+            <a href="http://iorder.me" class="btn btn-success finalOrderBtn" ng-click="" ng-if="confirmed">
+                <span class="glyphicon glyphicon-ok"></span>&nbsp;Оk
+            </a>
+        </div>
+    </div>
+</div>
